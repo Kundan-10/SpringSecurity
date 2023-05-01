@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,6 +20,12 @@ public class CustomerController {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
+	@GetMapping("/hello")
+	public String testHandler() {
+		
+		return "Welcome to Spring Secutity";
+		
+	}
 	
 	public ResponseEntity<Customer> registerCustomer(@RequestBody Customer customer){
 		
@@ -27,5 +34,7 @@ public class CustomerController {
 		return new ResponseEntity<>(registeredCustomer, HttpStatus.ACCEPTED);
 		
 	}
+	
+	
 
 }
