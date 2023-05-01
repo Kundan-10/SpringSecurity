@@ -26,7 +26,7 @@ public class Customer {
 	private String email;
 	
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-	private String password;
+	private String password;// password having propery only once duplicate not allowed
 	
 	private String address;
 
